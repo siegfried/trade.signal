@@ -1,3 +1,4 @@
+#' @export
 explain_signal <- function(x1) {
     x0 <- dplyr::lag(x1)
     x2 <- dplyr::lead(x1)
@@ -14,6 +15,7 @@ explain_signal <- function(x1) {
     )
 }
 
+#' @export
 plain_signal <- function(x) {
     x != "hold"
 }
