@@ -3,13 +3,19 @@ test_that("explain_signal", {
         explain_signal(
             c(TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE)
         ),
-        c("long", "hold", "short", "hold", "hold", "long", "short")
+        c("long", "hold", "hold", "short", "hold", "long", "hold")
     )
     expect_equal(
         explain_signal(
             c(TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, TRUE)
         ),
-        c("long", "hold", "short", "hold", "hold", "long", "hold", "short")
+        c("long", "hold", "hold", "short", "hold", "long", "hold", "hold")
+    )
+    expect_equal(
+        explain_signal(
+            c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE)
+        ),
+        c("long", "short", "long", "short", "long", "short", "long")
     )
 })
 
